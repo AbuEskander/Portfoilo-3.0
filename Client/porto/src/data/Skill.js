@@ -9,4 +9,7 @@ const Technical Skills=[{
 {
     id:3,
     name:"JavaScript /Node.js",
-}]
+}];
+
+export default Technical Skills;
+// Path: Client/porto/src/data/Skill.js

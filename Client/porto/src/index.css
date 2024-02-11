@@ -16,7 +16,7 @@ body {
   font-size: 32px;
   text-decoration: none;
   color: black;
-  transition: 1s;
+  transition: 0.3s;
 }
 
 .animated-underline {
@@ -100,12 +100,47 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
-@media screen and (max-width: 600px) {
+.BUTT {
+  display: block;
+  margin: 10px;
+
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: white;
+  color: white;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s;
+  border: #333 2px solid;
+}
+.BUTT:hover {
+  background-color: #333;
+}
+.DropDot {
+  color: white !important;
+}
+.DropDown {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  height: 300px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  border-radius: 20px;
+  transition: 0.3s;
+  padding: 10px;
+}
+@media screen and (max-width: 800px) {
   .Griding {
     grid-template-columns: 1fr;
   }
-  .AboutMe {
+  .AboutMe h1 {
+    font-size: 25pt;
     text-align: center;
+    font-weight: 740;
   }
   .ProfilePic {
     width: 150px;
@@ -115,5 +150,11 @@ body {
   }
   .Qualification {
     margin-top: 0;
+  }
+  .AboutMe {
+    text-align: center;
+  }
+  .animated-underline::before {
+    bottom: 30px;
   }
 }
