@@ -1,15 +1,15 @@
 const Paths = [
   {
     path: "/",
-    name: "Home",
+    name: "الرئيسية",
   },
   {
     path: "/Projects",
-    name: "Projects",
+    name: "مشاريعي",
   },
   {
     path: "/contact",
-    name: "Contact",
+    name: "تواصل معي",
   },
 ];
 export default Paths;

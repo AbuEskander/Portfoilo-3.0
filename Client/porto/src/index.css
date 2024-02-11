@@ -86,6 +86,8 @@ body {
   align-items: center;
 }
 .Qualification {
+  padding: 30px;
+  height: 30vh;
   width: 100%;
   background-color: #1d1d20;
   color: rgb(204, 198, 198);
@@ -129,7 +131,7 @@ body {
   height: 300px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
   z-index: 1;
-  border-radius: 20px;
+  border-radius: 0px 20px 20px 0px;
   transition: 0.3s;
   padding: 10px;
 }
