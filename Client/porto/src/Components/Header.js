@@ -5,7 +5,7 @@ import menu from "../svg/menu.svg";
 const Header = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [Open, setOpen] = useState(false);
-  const [Head, setHead] = useState("Home");
+  const [Head, setHead] = useState("الرئيسية");
 
   const handleHeader = (Path) => {
     setOpen(false);
