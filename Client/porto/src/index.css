@@ -193,37 +193,45 @@ body {
   border-radius: 5px;
 }
 .Certifications {
+  background-color: #222;
   border-radius: 20px;
   width: 90%;
-  padding: 60px;
+  padding: 20px;
   display: flex;
-  gap: 100px;
+  gap: 40px;
   flex-direction: column;
-  text-align: start;
-  align-items: start;
+
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
 }
-.Certificate {
-  width: 100%;
-  display: flex;
-  flex-flow: column;
-}
-.CertiDate {
-  display: flex;
-  align-self: self-end;
-  font-size: 23px;
-}
+@media (min-width: 800) {
+  .Certifications {
+    padding: 60px;
+    text-align: start;
+    align-items: start;
+    gap: 100px;
+  }
+  .Certificate {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+  }
+  .CertiDate {
+    display: flex;
+    align-self: self-end;
+    font-size: 23px;
+  }
 
-.CertifiIcon {
-  position: relative;
-  bottom: 5px;
-}
-.CertifiHeader {
-  display: flex;
-  flex-flow: row nowrap;
-  gap: 30px;
-}
-.CreditLInk {
-  font-size: 20px;
-  border-radius: 10px;
+  .CertifiIcon {
+    position: relative;
+    bottom: 5px;
+  }
+  .CertifiHeader {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 30px;
+  }
+  .CreditLInk {
+    font-size: 20px;
+    border-radius: 10px;
+  }
 }
