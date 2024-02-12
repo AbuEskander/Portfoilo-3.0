@@ -64,7 +64,7 @@ body {
 }
 .Griding {
   display: grid;
-  margin-top: 50px;
+  margin: 120px;
   grid-template-columns: 2fr 1fr;
   gap: 20px;
   width: 60%;
@@ -80,6 +80,7 @@ body {
 .Layout {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .links {
   text-decoration: none;
@@ -104,6 +105,7 @@ body {
   display: flex;
   flex-flow: column wrap;
   align-items: center;
+  justify-content: center;
   margin-top: 50px;
   margin-bottom: 0;
 }
@@ -114,7 +116,7 @@ body {
 .Qualities {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   background-color: #222;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
   padding: 30px;
@@ -191,6 +193,16 @@ body {
   .routes {
     display: block;
   }
+  .popup-container {
+    display: flex;
+    justify-content: center;
+  }
+  .HeaderLayout {
+    display: flex;
+    flex-direction: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 .percentage-bar {
   width: 100%;
@@ -199,9 +211,9 @@ body {
   gap: 10px;
 }
 .progress {
-  margin-top: 5px;
+  margin-top: 8px;
   background-color: var(--White);
-  height: 1rem;
+  height: 0.8rem;
   line-height: 30px;
   text-align: center;
   color: white;
@@ -221,10 +233,10 @@ body {
 }
 @media (min-width: 800px) {
   .Certifications {
-    padding: 60px;
+    padding: 70px;
     text-align: start;
     align-items: start;
-    gap: 100px;
+    gap: 30px;
   }
   .Certificate {
     width: 100%;
@@ -236,7 +248,11 @@ body {
     align-self: self-end;
     font-size: 23px;
   }
-
+  hr {
+    z-index: 0;
+    margin: 0;
+    width: 100%;
+  }
   .CertifiIcon {
     position: relative;
     bottom: 5px;
@@ -251,11 +267,20 @@ body {
     border-radius: 10px;
   }
 }
+.Creditntial {
+  width: 100% !important;
+}
 .HeaderLayout {
   background-color: var(--Black);
 }
+.Header {
+  margin: 20px;
+  color: var(--White);
+  align-self: center;
+  justify-self: center;
+}
 .Skills {
-  width: 100%;
+  width: 90%;
 }
 .popup-container {
   text-align: end;
@@ -273,15 +298,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 
 .popup-content {
+  width: 500px;
   display: flex;
   flex-direction: column;
   text-align: start;
   background-color: var(--Hovering);
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .popup button {

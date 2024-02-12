@@ -34,9 +34,8 @@ const About = () => {
         </a>
       </p>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales mi
-        nec felis porttitor rutrum. Nullam efficitur urna sed augue pulvinar, eu
-        mattis nisl pretium.
+        أي شيء يستحق الحصول عليه يستحق العمل من أجله. أي شيء تحبه يستحق القتال
+        من أجله
       </p>
     </div>
   );

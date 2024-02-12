@@ -4,6 +4,16 @@ import Paths from "../data/Paths";
 import menu from "../svg/menu.svg";
 const Header = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [Open, setOpen] = useState(false);
+  const [Head, setHead] = useState("Home");
+
+  const handleHeader = (Path) => {
+    setOpen(false);
+    setHead(Path);
+  };
+  const handleToggle = (PathHere) => {
+    setOpen(!Open);
+  };
   const updateScreenWidth = () => {
     setScreenWidth(window.innerWidth);
   };
@@ -17,16 +27,20 @@ const Header = () => {
   }, []);
   return (
     <div className="HeaderLayout">
-      {" "}
-      {screenWidth > 800 ? <Pages /> : <DropDown />}
+      {screenWidth > 800 ? (
+        <Pages />
+      ) : (
+        <DropDown
+          handleHeader={handleHeader}
+          handleToggle={(Val) => handleToggle(Val)}
+          Open={Open}
+        />
+      )}
+      {screenWidth < 800 && <h1 className="Header">{Head}</h1>}
     </div>
   );
 };
-const DropDown = () => {
-  const [Open, setOpen] = useState(false);
-  const handleToggle = () => {
-    setOpen(!Open);
-  };
+const DropDown = ({ Open, handleToggle, handleHeader }) => {
   return (
     <div>
       <button className="BUTT" onClick={handleToggle}>
@@ -35,7 +49,7 @@ const DropDown = () => {
       {Open && (
         <div className="DropDown">
           {Paths.map((val) => (
-            <Path key={val.name} Path={val} onClickChange={handleToggle} />
+            <Path key={val.name} Path={val} handleHeader={handleHeader} />
           ))}
         </div>
       )}
@@ -51,7 +65,7 @@ const Pages = () => {
     </>
   );
 };
-const Path = ({ Path, onClickChange }) => {
+const Path = ({ Path, handleHeader }) => {
   const RouteChecker = useLocation();
   return (
     <Link
@@ -59,7 +73,7 @@ const Path = ({ Path, onClickChange }) => {
       className={`routes animated-underline ${
         RouteChecker.pathname === Path.path && "Open"
       }`}
-      onClick={onClickChange}
+      onClick={() => handleHeader(Path.name)}
     >
       {Path.name}
     </Link>

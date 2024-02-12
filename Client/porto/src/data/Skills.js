@@ -23,7 +23,7 @@ const BackEnd = [
     percentage: 45,
   },
 ];
-
+/*
 const Languages = [
   {
     id: 1,
@@ -35,7 +35,7 @@ const Languages = [
     name: "English",
     percentage: 85,
   },
-];
+];*/
 
-export { FrontEnd, BackEnd, Languages };
+export { FrontEnd, BackEnd /*Languages*/ };
 // Path: Client/porto/src/data/Paths.js

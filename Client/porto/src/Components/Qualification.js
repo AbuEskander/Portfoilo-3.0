@@ -1,9 +1,20 @@
-import React, { useState } from "react";
-import { FrontEnd, BackEnd, Languages } from "../data/Skills";
+import React, { useState, useEffect } from "react";
+import { FrontEnd, BackEnd } from "../data/Skills";
 import Certificates from "../data/Certification";
 import Link from "../svg/Link.svg";
 import Closing from "../svg/Closing.svg";
+import ReadMore from "../svg/ReadMore.svg";
 const Qualification = () => {
+  const [innerWidth, setInnerWidth] = useState(window.innerWidth);
+  const updateWidth = () => {
+    setInnerWidth(window.innerWidth);
+  };
+  useEffect(() => {
+    window.addEventListener("resize", updateWidth);
+    return () => {
+      window.removeEventListener("resize", updateWidth);
+    };
+  }, []);
   const style = {
     margin: "40px",
   };
@@ -17,20 +28,22 @@ const Qualification = () => {
               <h3>Front-End</h3>
               <Skills Field={FrontEnd} />
             </Quality>
+            {innerWidth < 800 && <hr />}
             <Quality>
               <h3>Back-End</h3>
               <Skills Field={BackEnd} />
-            </Quality>
-            <Quality>
-              <h3>لغات</h3>
-              <Skills Field={Languages} />
             </Quality>
           </div>
         </div>
         <h2>شهادات و اعتمادات</h2>
         <div className="Certifications">
-          {Certificates.map((Certificate) => {
-            return <Certification key={Certificate.id} Certi={Certificate} />;
+          {Certificates.map((Certificate, index) => {
+            return (
+              <>
+                <Certification key={Certificate.id} Certi={Certificate} />
+                {index + 1 !== Certificates.length && <hr />}
+              </>
+            );
           })}
         </div>
       </div>
@@ -93,7 +106,7 @@ function Popup({ val }) {
     <div className="popup-container">
       {!isOpen && (
         <button className="btn btn-light CreditLInk" onClick={togglePopup}>
-          Read more!
+          Read more! <img src={ReadMore} />
         </button>
       )}
       {isOpen && (
@@ -105,6 +118,13 @@ function Popup({ val }) {
 
             <h2>{val.title}</h2>
             <p>{val.desc}</p>
+            {val.link && (
+              <a href={val.link} target="_blank">
+                <button className="btn btn-light Creditntial">
+                  Show Credential <img src={Link} />
+                </button>
+              </a>
+            )}
           </div>
         </div>
       )}
