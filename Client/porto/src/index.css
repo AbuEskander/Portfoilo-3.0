@@ -1,3 +1,9 @@
+:root {
+  --Black: #1d1d20;
+  --Hovering: #333;
+  --White: #f9f9f9;
+}
+
 * {
   list-style: none;
 }
@@ -22,18 +28,18 @@ body {
 .animated-underline {
   position: relative;
   text-decoration: none;
-  color: #333;
+  color: var(--Hovering);
 }
 
 .animated-underline::before,
 .Open::before {
   content: "";
   position: absolute;
-  width: 100%;
+  width: 95%;
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #333;
+  background-color: var(--Hovering);
   visibility: hidden;
   transform: scaleX(0);
   transition: all 0.3s ease-in-out;
@@ -43,6 +49,7 @@ body {
 .Open {
   visibility: visible;
   transform: scaleX(1);
+  color: #999;
 }
 .Open::before {
   visibility: visible;
@@ -87,9 +94,9 @@ body {
 }
 .Qualification {
   padding: 30px;
-  height: 30vh;
+  height: 100%;
   width: 100%;
-  background-color: #1d1d20;
+  background-color: var(--Black);
   color: rgb(204, 198, 198);
   display: flex;
   flex-flow: column wrap;
@@ -97,10 +104,18 @@ body {
   margin-top: 50px;
   margin-bottom: 0;
 }
+.Qualification h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
 .Qualities {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+}
+.Qualities h3 {
+  font-weight: bold;
+  font-size: 30px;
 }
 .BUTT {
   display: block;
@@ -114,10 +129,10 @@ body {
   border: none;
   cursor: pointer;
   transition: 0.5s;
-  border: #333 2px solid;
+  border: var(--Hovering) 2px solid;
 }
 .BUTT:hover {
-  background-color: #333;
+  background-color: var(--Hovering);
 }
 .DropDot {
   color: white !important;
@@ -126,7 +141,7 @@ body {
   position: absolute;
   display: grid;
   grid-template-columns: 1fr;
-  background-color: #f9f9f9;
+  background-color: var(--White);
   min-width: 160px;
   height: 300px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
@@ -139,6 +154,10 @@ body {
   .Griding {
     grid-template-columns: 1fr;
   }
+  body {
+    background-image: url("./assets/stock-photo-arabic-calligraphy-wallpaper-on-a-white-wall-with-a-black-interlocking-background-subtitles-2152328161.jpg");
+    background-size: cover;
+  }
   .AboutMe h1 {
     font-size: 25pt;
     text-align: center;
@@ -148,7 +167,7 @@ body {
     width: 150px;
   }
   .Qualities {
-    grid-template-columns: 1fr;
+    display: inline-block;
   }
   .Qualification {
     margin-top: 0;
@@ -156,7 +175,55 @@ body {
   .AboutMe {
     text-align: center;
   }
-  .animated-underline::before {
-    bottom: 30px;
+  .routes {
+    display: block;
   }
+}
+.percentage-bar {
+  width: 100%;
+  margin: 20px auto;
+}
+.progress {
+  background-color: var(--White);
+  height: 1rem;
+  line-height: 30px;
+  text-align: center;
+  color: white;
+  transition: width 0.3s ease;
+  border-radius: 5px;
+}
+.Certifications {
+  border-radius: 20px;
+  width: 90%;
+  padding: 60px;
+  display: flex;
+  gap: 100px;
+  flex-direction: column;
+  text-align: start;
+  align-items: start;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+}
+.Certificate {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+}
+.CertiDate {
+  display: flex;
+  align-self: self-end;
+  font-size: 23px;
+}
+
+.CertifiIcon {
+  position: relative;
+  bottom: 5px;
+}
+.CertifiHeader {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 30px;
+}
+.CreditLInk {
+  font-size: 20px;
+  border-radius: 10px;
 }
