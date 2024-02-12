@@ -2,6 +2,7 @@
   --Black: #1d1d20;
   --Hovering: #333;
   --White: #f9f9f9;
+  --NotSelected: #ccc;
 }
 
 * {
@@ -28,7 +29,7 @@ body {
 .animated-underline {
   position: relative;
   text-decoration: none;
-  color: var(--Hovering);
+  color: #777;
 }
 
 .animated-underline::before,
@@ -49,7 +50,7 @@ body {
 .Open {
   visibility: visible;
   transform: scaleX(1);
-  color: #999;
+  color: #ddd;
 }
 .Open::before {
   visibility: visible;
@@ -59,11 +60,13 @@ body {
   width: 190px;
   display: inline-block;
   border-radius: 25px;
+  grid-column: 1;
 }
 .Griding {
   display: grid;
   margin-top: 50px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
   width: 60%;
 }
 .AboutMe {
@@ -112,24 +115,30 @@ body {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  background-color: #222;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+  padding: 30px;
+  border-radius: 20px;
+  margin-bottom: 60px;
 }
 .Qualities h3 {
   font-weight: bold;
   font-size: 30px;
 }
+.Quality ul {
+  padding: 0;
+}
 .BUTT {
   display: block;
-  margin: 10px;
 
   padding: 10px 20px;
   border-radius: 10px;
-  background-color: white;
+  background-color: var(--Black);
   color: white;
   font-size: 20px;
   border: none;
   cursor: pointer;
   transition: 0.5s;
-  border: var(--Hovering) 2px solid;
 }
 .BUTT:hover {
   background-color: var(--Hovering);
@@ -141,16 +150,20 @@ body {
   position: absolute;
   display: grid;
   grid-template-columns: 1fr;
-  background-color: var(--White);
+  background-color: var(--Black);
   min-width: 160px;
   height: 300px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
   z-index: 1;
-  border-radius: 0px 20px 20px 0px;
+  border-radius: 0px 0px 20px 0px;
   transition: 0.3s;
   padding: 10px;
 }
 @media screen and (max-width: 800px) {
+  .Griding {
+    display: flex;
+    flex-direction: column-reverse;
+  }
   .Griding {
     grid-template-columns: 1fr;
   }
@@ -182,8 +195,11 @@ body {
 .percentage-bar {
   width: 100%;
   margin: 20px auto;
+  display: flex;
+  gap: 10px;
 }
 .progress {
+  margin-top: 5px;
   background-color: var(--White);
   height: 1rem;
   line-height: 30px;
@@ -231,10 +247,46 @@ body {
     gap: 30px;
   }
   .CreditLInk {
-    font-size: 20px;
+    font-size: 25px;
     border-radius: 10px;
   }
 }
 .HeaderLayout {
   background-color: var(--Black);
+}
+.Skills {
+  width: 100%;
+}
+.popup-container {
+  text-align: end;
+
+  margin-top: 50px;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  background-color: var(--Hovering);
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.popup button {
+  width: 30pt;
+  align-self: end;
+  text-align: center;
+  margin-top: 10px;
 }

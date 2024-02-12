@@ -24,15 +24,18 @@ const Header = () => {
 };
 const DropDown = () => {
   const [Open, setOpen] = useState(false);
+  const handleToggle = () => {
+    setOpen(!Open);
+  };
   return (
     <div>
-      <button className="BUTT" onClick={() => setOpen(!Open)}>
+      <button className="BUTT" onClick={handleToggle}>
         <img className="" src={menu} alt="menu" />
       </button>
       {Open && (
         <div className="DropDown">
           {Paths.map((val) => (
-            <Path key={val.name} Path={val} />
+            <Path key={val.name} Path={val} onClickChange={handleToggle} />
           ))}
         </div>
       )}
@@ -48,7 +51,7 @@ const Pages = () => {
     </>
   );
 };
-const Path = ({ Path }) => {
+const Path = ({ Path, onClickChange }) => {
   const RouteChecker = useLocation();
   return (
     <Link
@@ -56,6 +59,7 @@ const Path = ({ Path }) => {
       className={`routes animated-underline ${
         RouteChecker.pathname === Path.path && "Open"
       }`}
+      onClick={onClickChange}
     >
       {Path.name}
     </Link>

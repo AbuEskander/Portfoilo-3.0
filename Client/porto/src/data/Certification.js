@@ -7,6 +7,9 @@ const Certification = [
     by: "Dr.Angela Yuh",
     icon: Udemy,
     date: "Nov 2023",
+    desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales mi
+    nec felis porttitor rutrum. Nullam efficitur urna sed augue pulvinar, eu
+    mattis nisl pretium.`,
     link: "https://www.udemy.com/certificate/UC-dc5f3344-02b5-4949-ac7e-2d44f3da5817/",
   },
   {

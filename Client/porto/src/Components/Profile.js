@@ -4,8 +4,8 @@ const Profile = () => {
   return (
     <div className="Layout">
       <div className="Griding">
-        <Picture />
         <About />
+        <Picture />
       </div>
     </div>
   );
