@@ -34,13 +34,14 @@ const Header = () => {
           handleHeader={handleHeader}
           handleToggle={(Val) => handleToggle(Val)}
           Open={Open}
+          screenWidth={screenWidth}
         />
       )}
       {screenWidth < 800 && <h1 className="Header">{Head}</h1>}
     </div>
   );
 };
-const DropDown = ({ Open, handleToggle, handleHeader }) => {
+const DropDown = ({ Open, handleToggle, handleHeader, screenWidth }) => {
   return (
     <div>
       <button className="BUTT" onClick={handleToggle}>
@@ -49,14 +50,19 @@ const DropDown = ({ Open, handleToggle, handleHeader }) => {
       {Open && (
         <div className="DropDown">
           {Paths.map((val) => (
-            <Path key={val.name} Path={val} handleHeader={handleHeader} />
+            <Path
+              key={val.name}
+              Path={val}
+              handleHeader={handleHeader}
+              screenWidth={screenWidth}
+            />
           ))}
         </div>
       )}
     </div>
   );
 };
-const Pages = () => {
+const Pages = ({ handleHeader }) => {
   return (
     <>
       {Paths.map((val) => (
@@ -65,7 +71,7 @@ const Pages = () => {
     </>
   );
 };
-const Path = ({ Path, handleHeader }) => {
+const Path = ({ Path, handleHeader, screenWidth }) => {
   const RouteChecker = useLocation();
   return (
     <Link
@@ -73,7 +79,7 @@ const Path = ({ Path, handleHeader }) => {
       className={`routes animated-underline ${
         RouteChecker.pathname === Path.path && "Open"
       }`}
-      onClick={() => handleHeader(Path.name)}
+      onClick={() => screenWidth < 800 && handleHeader(Path.name)}
     >
       {Path.name}
     </Link>
