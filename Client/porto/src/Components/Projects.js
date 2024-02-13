@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import ImageShadow from "react-image-shadow";
-import TodoList from "../assets/Pig_Game.png";
 import MyProjects from "../data/MyProjects";
 import ReadMore from "../svg/ReadMore.svg";
 import Closing from "../svg/Closing.svg";

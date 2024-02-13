@@ -1,10 +1,10 @@
 import TodoList from "../assets/TodoListProject.jpeg";
-import Calculator from "../assets/Calculator.png";
-import PigGame from "../assets/Pig_Game.png";
-import CellCall from "../assets/CellCall.png";
-import TinDog from "../assets/TindogW.png";
-import MyBlog from "../assets/MyBlog.png";
-import ReactPorto from "../assets/ReactProject.png";
+import Calculator from "../assets/Calculator.jpg";
+import PigGame from "../assets/Pig_Game.jpg";
+import CellCall from "../assets/CellCall.jpg";
+import TinDog from "../assets/TindogW.jpg";
+import MyBlog from "../assets/MyBlog.jpg";
+import ReactPorto from "../assets/ReactProject.jpg";
 const MyProjects = [
   {
     id: 2,
