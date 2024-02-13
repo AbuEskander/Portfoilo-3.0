@@ -1,11 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Paths from "../data/Paths";
 import menu from "../svg/menu.svg";
+
 const Header = () => {
+  const ThisPath = useLocation();
+  const CurrentRoute =
+    Paths.find((val) => val.path === ThisPath.pathname)?.name ||
+    " Sorry this is a Wrong Route '404 Not Found'";
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [Open, setOpen] = useState(false);
-  const [Head, setHead] = useState("الرئيسية");
+  const [Head, setHead] = useState(CurrentRoute);
 
   const handleHeader = (Path) => {
     setOpen(false);
@@ -42,13 +47,27 @@ const Header = () => {
   );
 };
 const DropDown = ({ Open, handleToggle, handleHeader, screenWidth }) => {
+  const DropDownRef = useRef();
+
+  useEffect(() => {
+    const handleClick = (e) => {
+      if (DropDownRef.current && !DropDownRef.current.contains(e.target)) {
+        handleToggle();
+      }
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+    };
+  }, [handleToggle]);
+
   return (
     <div>
       <button className="BUTT" onClick={handleToggle}>
         <img className="" src={menu} alt="menu" />
       </button>
       {Open && (
-        <div className="DropDown">
+        <div ref={DropDownRef} className="DropDown">
           {Paths.map((val) => (
             <Path
               key={val.name}
@@ -84,9 +103,6 @@ const Path = ({ Path, handleHeader, screenWidth }) => {
       {Path.name}
     </Link>
   );
-};
-const Menu = () => {
-  return menu;
 };
 
 export default Header;

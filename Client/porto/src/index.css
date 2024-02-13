@@ -171,6 +171,8 @@ body {
   }
   body {
     background-image: url("./assets/stock-photo-arabic-calligraphy-wallpaper-on-a-white-wall-with-a-black-interlocking-background-subtitles-2152328161.jpg");
+
+    background-repeat: no-repeat;
     background-size: cover;
   }
   .AboutMe h1 {
@@ -316,4 +318,15 @@ body {
   align-self: end;
   text-align: center;
   margin-top: 10px;
+}
+
+.footer {
+  width: 90%;
+  height: 10vh;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--Black);
+  color: var(--NotSelected);
+  text-align: center;
+  padding: 10px;
 }

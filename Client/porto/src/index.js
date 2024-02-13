@@ -6,6 +6,9 @@ import "./index.css";
 import Projects from "./Components/Projects.js";
 import Header from "./Components/Header.js";
 import Contact from "./Components/Contact.js";
+import "react-image-shadow/assets/index.css";
+import "./Project.css";
+import Footer from "./Components/Footer.js";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
@@ -17,6 +20,7 @@ root.render(
         <Route path="/Projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   </React.StrictMode>
 );
