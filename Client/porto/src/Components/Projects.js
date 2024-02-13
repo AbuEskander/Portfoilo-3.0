@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import ImageShadow from "react-image-shadow";
 import MyProjects from "../data/MyProjects";
 import ReadMore from "../svg/ReadMore.svg";
@@ -34,7 +34,9 @@ const Project = ({ Project }) => {
 };
 function Popup({ val, isOpen, setIsOpen }) {
   const popupRef = useRef();
-
+  const togglePopup = useCallback(() => {
+    setIsOpen(!isOpen);
+  }, []);
   useEffect(() => {
     const handleClick = (e) => {
       if (popupRef.current && !popupRef.current.contains(e.target)) {
@@ -45,11 +47,7 @@ function Popup({ val, isOpen, setIsOpen }) {
     return () => {
       document.removeEventListener("mousedown", handleClick);
     };
-  }, []);
-
-  const togglePopup = () => {
-    setIsOpen(!isOpen);
-  };
+  }, [togglePopup]);
 
   return (
     <div className="Project-POP-Container">
