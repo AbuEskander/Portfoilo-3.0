@@ -34,9 +34,9 @@ const Project = ({ Project }) => {
 };
 function Popup({ val, isOpen, setIsOpen }) {
   const popupRef = useRef();
-  const togglePopup = useCallback(() => {
+  const togglePopup = () => {
     setIsOpen(!isOpen);
-  }, []);
+  };
   useEffect(() => {
     const handleClick = (e) => {
       if (popupRef.current && !popupRef.current.contains(e.target)) {
@@ -47,7 +47,7 @@ function Popup({ val, isOpen, setIsOpen }) {
     return () => {
       document.removeEventListener("mousedown", handleClick);
     };
-  }, [togglePopup]);
+  }, []);
 
   return (
     <div className="Project-POP-Container">
