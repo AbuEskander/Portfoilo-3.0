@@ -321,6 +321,9 @@ body {
 }
 
 .footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 90%;
   height: 30vh;
   bottom: 0;
