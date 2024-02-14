@@ -17,8 +17,8 @@ const SocialMedia = [
   },
   {
     title: "Instagram",
-    userName: "@basil_Ismail_",
-    Link: "https://www.instagram.com/basil_ismail_/",
+    userName: "@basil_awni_",
+    Link: "https://www.instagram.com/basil_awni_/",
     Icon: Insta,
   },
   {
