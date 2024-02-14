@@ -8,6 +8,7 @@
 }
 .ImageHover {
   width: 300px;
+
   border-radius: 15px;
 }
 .ProjectRoute h1 {
@@ -17,11 +18,11 @@
   text-align: center;
 }
 .Projects {
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  gap: 40px;
+  gap: 30px;
   height: 100%;
 }
 .Project-Link {
@@ -55,7 +56,11 @@
   margin-top: 10px;
 }
 .Project-POP-Container {
+  margin-top: 20px;
   text-align: end;
+}
+.Project-POP-Container h2 {
+  text-align: center;
 }
 .Project-popup-content {
   width: 500px;

@@ -20,7 +20,6 @@ const Project = ({ Project }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className={"Project "}>
-      <h2>{Project.title}</h2>
       <div className="Project-Img"></div>
       <Popup
         val={Project}
@@ -50,11 +49,11 @@ function Popup({ val, isOpen, setIsOpen, Project }) {
 
   return (
     <div className="Project-POP-Container">
-      {
-        <button className={"Project-Link "} onClick={togglePopup}>
-          <img className="ImageHover" src={Project.Image} alt="TodoList" />
-        </button>
-      }
+      <h2>{Project.title}</h2>
+      <button className={"Project-Link "} onClick={togglePopup}>
+        <img className="ImageHover" src={Project.Image} alt="TodoList" />
+      </button>
+
       {isOpen && (
         <div ref={popupRef} className="Project-popup overlay">
           <div className="Project-popup-content">
