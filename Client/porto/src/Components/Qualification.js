@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FrontEnd, BackEnd } from "../data/Skills";
+import { FrontEnd, BackEnd, Languages } from "../data/Skills";
 import Certificates from "../data/Certification";
 import Link from "../svg/Link.svg";
 import Closing from "../svg/Closing.svg";
@@ -32,6 +32,11 @@ const Qualification = () => {
             <Quality>
               <h3>Back-End</h3>
               <Skills Field={BackEnd} />
+            </Quality>
+            {innerWidth < 800 && <hr />}
+            <Quality>
+              <h3>Languages</h3>
+              <Skills Field={Languages} />
             </Quality>
           </div>
         </div>
@@ -85,7 +90,7 @@ const Skills = ({ Field }) => {
 };
 const Skill = ({ sk }) => {
   return (
-    <div>
+    <div className="skill">
       <h4>{sk.name}</h4>
       <div className="percentage-bar">
         <div className="progress" style={{ width: `${sk.percentage}%` }}></div>
