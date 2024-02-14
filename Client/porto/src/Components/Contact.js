@@ -23,8 +23,10 @@ const Social = ({ SocialMedia }) => {
       >
         <img className="Social=IMG" src={SocialMedia.Icon} alt="Github" />
       </a>
-      <p>{SocialMedia.title}</p>
-      <p className="UserName">{SocialMedia.userName}</p>
+      <div className="Social-text">
+        <p>{SocialMedia.title}</p>
+        <p className="UserName">{SocialMedia.userName}</p>
+      </div>
     </div>
   );
 };

@@ -42,8 +42,21 @@
     width: 80%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: center;
+    align-items: start;
     margin-top: 20px;
+  }
+  .Social {
+    gap: 20px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+  .Social-text {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-items: start;
+    align-items: start;
   }
 }
