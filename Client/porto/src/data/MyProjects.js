@@ -48,20 +48,6 @@ const MyProjects = [
     link: "https://github.com/AbuEskander/TodoList",
     technologies: ["Node.js", "Express", "MongoDB", "Bootstrap 5"],
   },
-  {
-    id: 3,
-    title: "Pig Game",
-    desc: "Pig Game is a simple game that you can play with a friend. It is built using only JavaScript and styled using Pure CSS.",
-    Image: PigGame,
-    technologies: ["HTML", "CSS", "JavaScript"],
-  },
-  {
-    id: 5,
-    title: "TinDog",
-    desc: "TinDog is a simple web website to practice Bootstrap . This was my first project in the web development journey.",
-    Image: TinDog,
-    technologies: ["Bootstrap 5"],
-  },
 ];
 
 export default MyProjects;

@@ -19,20 +19,19 @@ const Projects = () => {
 const Project = ({ Project }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className={"Project " + (isOpen ? "Active" : "")}>
-      <div className="Project-Img">
-        <ImageShadow
-          className="ImageHover"
-          src={Project.Image}
-          alt="TodoList"
-        />
-      </div>
-      <Popup val={Project} isOpen={isOpen} setIsOpen={setIsOpen} />
+    <div className={"Project "}>
       <h2>{Project.title}</h2>
+      <div className="Project-Img"></div>
+      <Popup
+        val={Project}
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        Project={Project}
+      />
     </div>
   );
 };
-function Popup({ val, isOpen, setIsOpen }) {
+function Popup({ val, isOpen, setIsOpen, Project }) {
   const popupRef = useRef();
   const togglePopup = () => {
     setIsOpen(!isOpen);
@@ -51,18 +50,17 @@ function Popup({ val, isOpen, setIsOpen }) {
 
   return (
     <div className="Project-POP-Container">
-      {!isOpen && (
-        <button
-          className={
-            "btn btn-light Project-Link " + (isOpen ? "Active" : "overlay-text")
-          }
-          onClick={togglePopup}
-        >
-          Read more! <img src={ReadMore} />
+      {
+        <button className={"Project-Link "} onClick={togglePopup}>
+          <ImageShadow
+            className="ImageHover"
+            src={Project.Image}
+            alt="TodoList"
+          />
         </button>
-      )}
+      }
       {isOpen && (
-        <div ref={popupRef} className="Project-popup">
+        <div ref={popupRef} className="Project-popup overlay">
           <div className="Project-popup-content">
             <button className="btn btn-light closingTag" onClick={togglePopup}>
               <img src={Closing} alt="Closing" />
@@ -77,9 +75,9 @@ function Popup({ val, isOpen, setIsOpen }) {
               })}
             </div>
             {val.link && (
-              <a href={val.link} target="_blank">
-                <button className=" GithubLink">
-                  GitHub Repository <img src={GitHub} />
+              <a className=" GithubLink" href={val.link} target="_blank">
+                <button>
+                  <span>GitHub Repository</span> <img src={GitHub} />
                 </button>
               </a>
             )}
