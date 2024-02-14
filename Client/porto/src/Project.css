@@ -6,7 +6,10 @@
   height: 100%;
   padding: 60px;
 }
-
+.ImageHover {
+  width: 300px;
+  border-radius: 15px;
+}
 .ProjectRoute h1 {
   margin-bottom: 60px;
   color: var(--Black);

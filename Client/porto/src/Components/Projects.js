@@ -52,11 +52,7 @@ function Popup({ val, isOpen, setIsOpen, Project }) {
     <div className="Project-POP-Container">
       {
         <button className={"Project-Link "} onClick={togglePopup}>
-          <ImageShadow
-            className="ImageHover"
-            src={Project.Image}
-            alt="TodoList"
-          />
+          <img className="ImageHover" src={Project.Image} alt="TodoList" />
         </button>
       }
       {isOpen && (
